@@ -1,293 +1,758 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Gourmet &mdash; Colorlib Website Template</title>
+    <title>Sea Bites - KallummaKaya in calicut</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
+    <!-- Google Fonts: Open Sans, DM Serif Display, Merriweather Sans, Lato -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|DM+Serif+Display:400,400i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather+Sans:wght@700&display=swap" rel="stylesheet">
 
-    <link rel="shortcut icon" href="ftco-32x32.png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+    <!-- Swiper.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Font Awesome, Ionicons, Flaticon -->
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <!-- Only keep CSS files that are referenced in the HTML -->
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/aos.css">
-
     <link rel="stylesheet" href="css/magnific-popup.css">
 
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              heading: ['Merriweather Sans', 'sans-serif'],
+              body: ['Lato', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Subtle Swiper navigation buttons */
 
-    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
-    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+      .swiper-button-next{
+        right: 30%;
+      }
 
-    <!-- Theme Style -->
-    <link rel="stylesheet" href="css/style.css">
+      .swiper-button-prev{
+        left: 30%;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: #a3a3a3;
+        background: rgba(255,255,255,0.7);
+        border-radius: 9999px;
+        width: 2.25rem;
+        height: 2.25rem;
+        box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
+        top: 95%;
+        transition: background 0.2s, color 0.2s;
+      }
+      .swiper-button-next:hover,
+      .swiper-button-prev:hover {
+        color: #fb923c;
+        background: #fff;
+      }
+      .swiper-button-next:after,
+      .swiper-button-prev:after {
+        font-size: 1.25rem !important;
+      }
+      .swiper-pagination-bullet {
+        background: #a3a3a3 !important;
+        opacity: 0.7;
+        width: 0.75rem;
+        height: 0.75rem;
+        margin: 0 0.25rem !important;
+        transition: background 0.2s, opacity 0.2s;
+      }
+      .swiper-pagination-bullet-active {
+        background: #fb923c !important;
+        opacity: 1;
+      }
+      
+      /* Navbar styles */
+      .navbar {
+        transition: background-color 0.3s ease;
+        position: relative;
+      }
+      
+      
+      .navbar-link {
+        position: relative;
+      }
+      
+      .navbar-link:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #fb923c;
+        transition: width 0.3s ease;
+      }
+      
+      .navbar-link:hover:after {
+        width: 100%;
+      }
+      
+      /* Hero section background pattern */
+      .hero-pattern {
+        background-color: #ffffff;
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f3f4f6' fill-opacity='0.6'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+      
+      /* Instagram button style */
+      .instagram-btn {
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        color: white;
+        transition: all 0.3s ease;
+      }
+      
+      .instagram-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+    </style>
   </head>
   <body>
     
-    <section id="hero" class="hero-modern-section position-relative overflow-hidden pt-9 pb-7 d-flex flex-column align-items-center justify-content-center text-center">
-      <div class="container">
-        <div class="d-flex flex-column align-items-center justify-content-center">
-          <div class=" hero-img-circle bg-white shadow-lg d-flex align-items-center justify-content-center mb-4">
-            <img src="/img/hero.jpg" alt="Delicious Mussels" class="img-fluid rounded-circle hero-img-main">
-          </div>
-          <h1 class="hero-title mb-3 fw-bold">We Serve<br><span class="text-highlight">Delicious Mussels</span></h1>
-          <p class="hero-desc mb-4 mx-auto" style="max-width: 580px;">Enjoy authentic Kallumakkaya dishes in Calicut, crafted with fresh mussels and Kerala spices. Taste the tradition and innovation in every bite!</p>
-          <a href="#menu" class="btn btn-warning btn-lg rounded-pill px-5 shadow-sm">Get Started</a>
-        </div>
-      </div>
-      <div class="hero-bg-curve position-absolute top-0 end-0 h-100"></div>
-    </section>
-    <section class="section pb-0">
-      <div class="container">
-        <div class="row mb-5 justify-content-center" data-aos="fade">
-            <div class="col-md-7 text-center heading-wrap">
-              <h2 data-aos="fade-up">Best &amp; Good</h2>
-              <p data-aos="fade-up" data-aos-delay="100">Experience the finest seafood dining in Calicut, where we serve premium New Zealand mussels and fresh local seafood. Our expert chefs combine traditional Kerala spices with modern culinary techniques to create unforgettable dishes. From our signature baked mussels to innovative seafood preparations, every dish is crafted with passion and the freshest ingredients.</p>
-            </div>
-          </div>
-        <div class="row align-items-center">
-          <div class="col-lg-4">
-            <img src="img/main1.avif" alt="Image" class="img-fluid" style="height: 400px; width: 100%; object-fit: cover;" data-aos="fade" data-aos-delay="200">
-          </div>
-          <div class="col-lg-4">
-            <img src="img/main2.avif" alt="Image" class="img-fluid" style="height: 400px; width: 100%; object-fit: cover;" data-aos="fade" data-aos-delay="200">
-          </div>
-          <div class="col-lg-4">
-            <img src="img/main3.avif" alt="Image" class="img-fluid" style="height: 400px; width: 100%; object-fit: cover;" data-aos="fade" data-aos-delay="500">
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Navbar Section -->
+    <nav class="navbar fixed w-full z-50 font-body py-4 bg-transparent transition-colors duration-300 backdrop-blur-lg">
+  <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+    <!-- Logo -->
+     <div class="flex items-center gap-x-2">
 
+    <a href="#" class="text-xl font-thin  text-gray-900 tracking-wide flex items-center gap-2">
+      Sea Bites
+    </a>
+     </div>
+    <!-- Desktop Nav Links -->
+    <div class="hidden md:flex space-x-10 ml-8">
+      <a href="#hero" class="navbar-link-modern">Home</a>
+      <a href="#menu" class="navbar-link-modern">Menu</a>
+      <a href="#gallery" class="navbar-link-modern">Gallery</a>
+    </div>
 
-    <section class="section bg-light  top-slant-white bottom-slant-gray">
+    <!-- Hamburger (Mobile) -->
+    <button id="navbar-burger" class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded focus:outline-none border border-gray-200 bg-white/60 backdrop-blur-sm">
+      <span class="block w-6 h-0.5 bg-gray-800 mb-1 transition-all"></span>
+      <span class="block w-6 h-0.5 bg-gray-800 mb-1 transition-all"></span>
+      <span class="block w-6 h-0.5 bg-gray-800 transition-all"></span>
+    </button>
+  </div>
+  <!-- Mobile Nav -->
+  <div id="mobile-nav" class="fixed top-0 left-0 w-full h-full bg-white/80 backdrop-blur-lg z-40 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold text-gray-900 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden">
+    <a href="#" class="navbar-link-modern" onclick="closeMobileNav()">Home</a>
+    <a href="#menu" class="navbar-link-modern" onclick="closeMobileNav()">Menu</a>
+    <a href="#footer" class="navbar-link-modern" onclick="closeMobileNav()">Contact Us</a>
 
-      <div class="clearfix mb-5 pb-5 " style="margin-top: 200px;">
-        <div class="container-fluid">
-          <div class="row" data-aos="fade">
-            <div class="col-md-12 text-center heading-wrap">
-              <h2>Our Menu</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        
-        <div class="row no-gutters">
-          <div class="col-md-6">
-            <div class="sched d-block d-lg-flex">
-              <div class="bg-image order-2" style="background-image: url('img/dish1.jpg');" data-aos="fade"></div>
-              <div class="text order-1">
-                <h3>Kallumakkaya </h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                <p class="text-primary h3">₹120.00</p>
-              </div>
-              
-            </div>
-
-            <div class="sched d-block d-lg-flex">
-              <div class="bg-image" style="background-image: url('img/dish3.jpg');" data-aos="fade"></div>
-              <div class="text">
-                <h3>Kallumakkaya Erachi</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                <p class="text-primary h3">₹400.00</p>
-                
-              </div>
-              
-            </div>
-
-          </div>
-
-          <div class="col-md-6">
-            <div class="sched d-block d-lg-flex">
-              <div class="bg-image order-2" style="background-image: url('img/dish2.jpg');" data-aos="fade"></div>
-              <div class="text order-1">
-                <h3>Kallumakkaya Nirachath</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                <p class="text-primary h3">₹450.00</p>
-                
-              </div>
-              
-            </div>
-
-            <div class="sched d-block d-lg-flex">
-              <div class="bg-image" style="background-image: url('img/dish4.jpg');" data-aos="fade"></div>
-              <div class="text">
-                <h3>Kallumakkaya Achar</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...</p>
-                <p class="text-primary h3">₹300.00</p>
-                
-              </div>
-              
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section> <!-- .section -->
-
-   
-
-    <section class="relative-higher">
-
-      <div class="clearfix mb-5 pb-5">
-        <div class="container-fluid">
-          <div class="row" data-aos="fade">
-            <div class="col-md-12 text-center heading-wrap">
-              <h2>Testimonial</h2>
-              <!-- <span class="back-text">Testimonial</span> -->
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-
-        <div class="row justify-content-center">
-          <div class="col-lg-7">
-            <div class="owl-carousel centernonloop2">
-              <div class="slide" data-aos="fade-left" data-aos-delay="100">
-                <blockquote class="testimonial">
-                  <p>&ldquo; The best mussel restaurant in Calicut! Their fusion of Kerala spices with New Zealand mussels creates an unforgettable dining experience. The ambiance is perfect for both family dinners and special occasions. &rdquo;</p>
-                  <div class="d-flex author">
-                    <img src="img/person_1.jpg" alt="" class="mr-4">
-                    <div class="author-info">
-                      <h4>Rahul Menon</h4>
-                      <p>Food Critic, Calicut Times</p>
-                    </div>
-                  </div>  
-                </blockquote>
-              </div>
-              <div class="slide" data-aos="fade-left" data-aos-delay="200">
-                <blockquote class="testimonial">
-                  <p>&ldquo; A hidden gem in Calicut! Their seafood preparations are exceptional, especially the baked mussels. The service is impeccable, and the location is perfect for a romantic dinner by the coast. &rdquo;</p>
-                  <div class="d-flex author">
-                    <img src="img/person_2.jpg" alt="" class="mr-4">
-                    <div class="author-info">
-                      <h4>Priya Nair</h4>
-                      <p>Local Food Blogger</p>
-                    </div>
-                  </div>  
-                </blockquote>
-              </div>
-              <div class="slide" data-aos="fade-left" data-aos-delay="300">
-                <blockquote class="testimonial">
-                  <p>&ldquo; As a seafood lover from Calicut, I can confidently say this is the best place for mussels in the city. Their innovative dishes combine the best of local and international flavors. A must-visit! &rdquo;</p>
-                  <div class="d-flex author">
-                    <img src="img/person_3.jpg" alt="" class="mr-4">
-                    <div class="author-info">
-                      <h4>Vikram Pillai</h4>
-                      <p>Regular Customer</p>
-                    </div>
-                  </div>  
-                </blockquote>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        
-
-        
-      </div>
-    </section> <!-- .section -->
-
-    <section class="section  bg-light top-slant-white">
-      <div class="clearfix mb-5 pb-5">
-        <div class="container-fluid">
-          <div class="row" data-aos="fade">
-            <div class="col-md-12 text-center heading-wrap">
-              <h2>Gallery</h2>
-              <span class="back-text">Our Blog</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="blog d-block">
-              <a class="bg-image d-block" href="single.html" style="background-image: url('img/dishes_1.jpg');"></a>
-              <div class="text">
-                <h3><a href="single.html">How To Bake A Good Taste Food</a></h3>
-
-                
-              </div>
-              
-            </div>
-          </div>
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="blog d-block">
-              <a class="bg-image d-block" href="single.html" style="background-image: url('img/dishes_2.jpg');"></a>
-              <div class="text">
-                <h3><a href="single.html">How To Bake A Good Taste Food</a></h3>                
-              </div>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section> <!-- .section -->
-
-    <footer class="site-footer" role="contentinfo">
+  </div>
+</nav>
+<style>
+  .navbar-link-modern {
+    position: relative;
+    color: #1f2937;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding: 0.25rem 0;
+    transition: color 0.2s;
+  }
+  .navbar-link-modern:hover {
+    color: #fb923c;
+  }
+  .navbar-link-modern:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #fb923c 0%, #f59e42 100%);
+    border-radius: 2px;
+    transition: width 0.3s cubic-bezier(.4,0,.2,1);
+  }
+  .navbar-link-modern:hover:after {
+    width: 100%;
+  }
+  .glass-btn {
+    background: rgba(255,255,255,0.13);
+    box-shadow: 0 4px 32px 0 rgba(31, 41, 55, 0.07);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(8px);
+  }
+</style>
+<script>
+  // Mobile nav toggle
+  const burger = document.getElementById('navbar-burger');
+  const mobileNav = document.getElementById('mobile-nav');
+  if (burger && mobileNav) {
+    burger.addEventListener('click', function() {
+      if (mobileNav.classList.contains('opacity-0')) {
+        mobileNav.classList.remove('opacity-0', 'pointer-events-none');
+        mobileNav.classList.add('opacity-100');
+      } else {
+        mobileNav.classList.add('opacity-0', 'pointer-events-none');
+        mobileNav.classList.remove('opacity-100');
+      }
+    });
+  }
+  function closeMobileNav() {
+    if (mobileNav) {
+      mobileNav.classList.add('opacity-0', 'pointer-events-none');
+      mobileNav.classList.remove('opacity-100');
+    }
+  }
+</script>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="relative flex flex-col items-center justify-center text-center overflow-hidden hero-pattern pt-40 pb-24 font-body">
+  
+      <!-- Layered Gray Waves at Bottom (taller, reaching center) -->
       
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-4 mb-5">
-            <h3>About Us</h3>
-            <p class="mb-5">Welcome to Calicut's premier mussel restaurant, where we bring together the finest New Zealand mussels with the rich flavors of Kerala's coastal cuisine. Our commitment to quality and authentic taste has made us a favorite destination for seafood lovers in Calicut.</p>
-            <ul class="list-unstyled footer-link d-flex footer-social">
-              <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
-              <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
-              <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
-              <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
-            </ul>
+      <div class="container max-w-6xl mx-auto px-4 flex flex-col items-center justify-center h-full z-10 my-auto">
+        <div class="flex flex-col-reverse md:flex-row  items-center justify-between gap-12 md:gap-16">
+          <div class="md:w-1/2 flex flex-col  items-center md:items-start text-center md:text-left">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight font-heading" data-aos="fade-in" data-aos-delay="100">We Serve <span class="text-gray-800 font-heading">Delicious</span></h1>
+            <!-- <h1 class="text-4xl md:text-5xl font-bold mb-6 text-teal-600 leading-tight font-heading">KallummaKaya</h1> -->
+            <a href="https://fontmeme.com/malayalam/" data-aos="fade-in" data-aos-delay="250"><img width="300px" src="https://fontmeme.com/permalink/250612/5dfbfb8aef7ae7c9addbf0e6a435adaa.png" alt="malayalam" border="0"></a>
+            <!-- <a href="https://fontmeme.com/malayalam/"><img src="https://fontmeme.com/permalink/250612/d5f01de345e4af6031d7bae1ab78ed2e.png" alt="malayalam" border="0"></a> -->
+
+            
+            <p class="mb-8 text-lg text-gray-700 max-w-2xl leading-relaxed mt-4" data-aos="fade-in" data-aos-delay="400">Enjoy authentic Kallumakkaya dishes in Calicut, crafted with fresh mussels and Kerala spices. Taste the tradition and innovation in every bite!</p>
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto" data-aos="fade-in" data-aos-delay="400">
+  <a href="https://www.instagram.com/seabites9?igsh=MTY3eTZoMTl0Mjk3cQ==" target="_blank"
+    class="inline-flex items-center instagram-btn text-white text-lg font-semibold rounded-full px-10 py-4 shadow-lg transition justify-center">
+    <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+    </svg>
+    Explore Our Food
+  </a>
+  <a href="#menu"
+    class="inline-flex items-center bg-white/70 border border-gray-300 text-gray-800 text-lg font-semibold rounded-full px-10 py-4 shadow transition justify-center menu-scroll-btn hover:bg-gray-100 hover:text-gray-900">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
+      <path fill="currentColor"
+        d="M15.292 7.305a2.75 2.75 0 0 0-3.803-.082l-6.097 5.589a2.75 2.75 0 0 0-.087 3.972l5.91 5.91a2.75 2.75 0 0 0 1.946.806h3.275a4.25 4.25 0 0 1 3.242 1.5l13.026 15.362a4 4 0 0 0 5.657-5.657L23.005 21.683a4.25 4.25 0 0 1-1.501-3.242v-3.785a2.75 2.75 0 0 0-.806-1.944zM9.8 5.38a5.25 5.25 0 0 1 7.26.158l5.406 5.406a5.25 5.25 0 0 1 1.538 3.712v3.785c0 .353.106.693.299.979l1.057-.963c.382-.347.631-.914.692-1.623c.162-1.885.775-3.89 1.592-5.667c.813-1.772 1.871-3.411 2.991-4.531a9 9 0 1 1 12.728 12.728c-1.12 1.12-2.759 2.178-4.53 2.991c-1.778.817-3.782 1.43-5.667 1.592c-.708.06-1.276.31-1.623.692l-.517.568l9.033 7.66l.036.036a6.5 6.5 0 0 1-9.192 9.193l-.037-.036l-7.32-8.633l-8.116 8.92l-.04.042a5.5 5.5 0 1 1-7.736-7.819l9.324-8.484a1.8 1.8 0 0 0-.542-.086h-3.275a5.25 5.25 0 0 1-3.713-1.538l-5.91-5.91a5.25 5.25 0 0 1 .164-7.583zm19.318 18.209l.576-.633c.893-.982 2.13-1.403 3.258-1.5c1.529-.131 3.25-.644 4.837-1.372c1.592-.732 2.956-1.638 3.806-2.488a6.5 6.5 0 0 0-9.192-9.192c-.85.85-1.756 2.214-2.487 3.807c-.73 1.587-1.242 3.308-1.373 4.837c-.097 1.128-.518 2.365-1.5 3.258l-.866.789zm-10.33 4.229l-9.428 8.58a3 3 0 0 0 4.242 4.242l8.313-9.135zM33.5 13.75a1.25 1.25 0 1 0-2.5 0c0 2.9 2.35 5.25 5.25 5.25a1.25 1.25 0 1 0 0-2.5a2.75 2.75 0 0 1-2.75-2.75m-25.134.616a1.25 1.25 0 0 1 1.768 0l4 4a1.25 1.25 0 0 1-1.768 1.768l-4-4a1.25 1.25 0 0 1 0-1.768m5.768-4a1.25 1.25 0 0 0-1.768 1.768l4 4a1.25 1.25 0 0 0 1.768-1.768zm16.501-3.73l.884.884z" />
+    </svg>
+    <span class="ml-2">
+      View Menu
+    </span>
+  </a>
+</div>
 
           </div>
-          <div class="col-md-5 mb-5">
-            <div class="mb-5">
-              <h3>Opening Hours</h3>
-              <p><strong class="d-block font-weight-normal text-black">Sunday-Thursday</strong> 5AM - 10PM</p>
+          <div class="md:w-1/2 flex justify-center md:justify-end relative"  >
+            <div class="bg-white shadow-lg flex items-center justify-center rounded-full max-w-[300px] h-[300px] md:w-[480px] md:h-[480px] max-w-full max-h-full overflow-hidden border-4 border-orange-100" data-aos="fade-in" data-aos-delay="300" data-aos-duration="2500" >
+              <!-- <img src="/img/hero-kallummakaya.jpg" alt="Delicious Mussels" class="object-cover rounded-full w-full h-full"> -->
+              <img src="img/hero/outside.png" alt="Delicious Mussels" class="object-cover rounded-full w-full h-full animate-hero-image-entrance"  >
+              <img src="img/hero/inside.png" alt="Delicious Mussels" class="object-cover rounded-full w-full h-full absolute w-[200px] h-[210px] pt-2"   >
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Decorative wave at bottom -->
+      <div class="absolute bottom-0 left-0 w-full" >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#EFF6FF" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Best & Good Section -->
+    <section class="pt-24 pb-48 bg-blue-50 font-body relative overflow-hidden">
+      <!-- Decorative elements -->
+      <div class="absolute top-0 right-0 w-64 h-64 bg-orange-50 rounded-full opacity-30 -mr-32 -mt-32"></div>
+      <div class="absolute bottom-0 left-0 w-48 h-48 bg-orange-50 rounded-full opacity-30 -ml-24 -mb-24"></div>
+      
+      <div class="max-w-6xl mx-auto px-4 relative z-10">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+          <!-- Left content column -->
+          <div class="md:w-2/5 mb-8 md:mb-0" data-aos="fade-right">
+            <h2 class="text-2xl md:text-3xl font-bold mb-3 font-heading">Best <span class="text-orange-400">&amp;</span> Good</h2>
+            <p class="text-gray-600 text-sm mb-6 leading-relaxed">Premium kallummakkayi in Calicut with fresh local ingredients and traditional Kerala spices.</p>
+            
+            <!-- Feature points -->
+            <div class="space-y-3">
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <p class="text-sm text-gray-700">Premium Kozhikodan mussels</p>
+              </div>
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <p class="text-sm text-gray-700">Traditional Kerala spices</p>
+              </div>
+              <div class="flex items-start">
+                <div class="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <p class="text-sm text-gray-700">Expert culinary techniques</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right image grid with overlap -->
+          <div class="md:w-3/5 relative" data-aos="fade-left" data-aos-offset="200">
+            <div class="grid grid-cols-2 gap-4 md:gap-6">
+              <!-- Main large image -->
+              <div class="col-span-2 md:col-span-1 md:row-span-2 bg-white p-2 rounded-lg shadow-sm transform md:translate-y-4">
+                <div class="h-48 md:h-full relative overflow-hidden rounded">
+                  <img src="img/products/best-1.png" alt="Premium Seafood" class="w-full h-full object-cover">
+                </div>
+              </div>
+              
+              <!-- Smaller image 1 -->
+              <div class="bg-white p-2 rounded-lg shadow-sm">
+                <div class="h-64 relative overflow-hidden rounded">
+                  <img src="img/products/best-2.png" alt="Fresh Ingredients" class="w-full h-full object-cover">
+                </div>
+              </div>
+              
+              <!-- Smaller image 2 -->
+              <div class="bg-white p-2 rounded-lg shadow-sm transform md:-translate-y-4">
+                <div class="h-full md:h-48 relative overflow-hidden rounded">
+                  <img src="img/products/nirachath.jpeg" alt="Expert Chefs" class="w-full h-full object-cover">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- Menu Section -->
+    <section id="menu" class="py-16 md:py-28 font-body hero-pattern" >
+      
+      <div class="max-w-6xl mx-auto px-4 ">
+        <div class="mb-10" data-aos="fade">
+          <div class="text-center">
+          <h2 class="text-2xl md:text-3xl font-bold mb-2 font-heading">Our Menu</h2>
+            <!-- <img src="img/kallummakkayi.svg" alt="" class=" w-full min-w-48 md:max-w-[300px] mx-auto -mt-2 -mt-4"> -->
+             <p class="text-gray-600 text-sm mb-6 leading-relaxed">Explore our delicious kallummakkayi creations </p>
+          </div>
+        </div>
+        <!-- Extraordinary Instagram Follow Button Start -->
+        
+        
+        <script>
+          // Interactive gradient movement for Instagram follow button
+          const instaBtn = document.querySelector('.instagram-follow-btn');
+          if (instaBtn) {
+            instaBtn.addEventListener('mousemove', function(e) {
+              const rect = this.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              // Diagonal movement: combine x and y for a more diagonal effect
+              const diagonal = Math.round(((x + y) / (rect.width + rect.height)) * 100);
+              this.style.backgroundPosition = `${diagonal}% ${diagonal}%`;
+            });
+            instaBtn.addEventListener('mouseleave', function() {
+              this.style.backgroundPosition = '';
+            });
+          }
+        </script>
+        <!-- Extraordinary Instagram Follow Button End -->
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 max-w-2xl mx-auto -mt-4">
+          <!-- Card 1 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 group" data-aos="fade-up" data-aos-delay="100" style="margin-bottom:0.5rem;">
+            <div class="h-48 relative overflow-hidden">
+              <img src="img/products/best-1.png" class="w-full h-full object-cover" alt="Kallumakkaya">
+            </div>
+            <div class="p-2">
+              <div class="flex items-center justify-between mb-1">
+                <div>
+
+                <h3 class="text-base font-bold font-heading">Kallumakkaya</h3>
+              <p class="text-gray-600 text-xs mb-2">Fresh mussels with Kerala spices</p>
+                </div>
+                <a href="https://wa.me/919048838276?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20Kallumakkaya" target="_blank" class="md:opacity-0 group-hover:opacity-100 transition-opacity duration-200 inline-flex items-center gap-1 px-2 py-1 rounded-full text-green-700 text-xs font-medium bg-transparent hover:bg-green-50"><span class="fa fa-whatsapp" style="font-size:2em;"></span></a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 group" data-aos="fade-up" data-aos-delay="150">
+            <div class="h-48 relative overflow-hidden">
+              <img src="img/products/nirachath.jpeg" class="w-full h-full object-cover" alt="Kallumakkaya Nirachath">
+            </div>
+            <div class="p-2">
+              <div class="flex items-center justify-between mb-1">
+                <div>
+
+                <h3 class="text-base font-bold font-heading">Kallumakkaya Nirachath</h3>
+              <p class="text-gray-600 text-xs mb-2">Stuffed mussels with spices</p>
+                </div>
+                <a href="https://wa.me/919048838276?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20Kallumakkaya%20Nirachath" target="_blank" class="md:opacity-0 group-hover:opacity-100 transition-opacity duration-200 inline-flex items-center gap-1 px-2 py-1 rounded-full text-green-700 text-xs font-medium bg-transparent hover:bg-green-50"><span class="fa fa-whatsapp" style="font-size:2em;"></span></a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 group" data-aos="fade-up" data-aos-delay="200">
+            <div class="h-48 relative overflow-hidden">
+              <img src="img/products/erachi.jpg" class="w-full h-full object-cover " alt="Kallumakkaya Erachi">
+            </div>
+            <div class="p-2">
+              <div class="flex items-center justify-between mb-1">
+                <div>
+
+                <h3 class="text-base font-bold font-heading">Kallumakkaya Erachi</h3>
+              <p class="text-gray-600 text-xs mb-2">Tender mussel meat with spices</p>
+                </div>
+                <a href="https://wa.me/919048838276?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20Kallumakkaya%20Erachi" target="_blank" class="md:opacity-0 group-hover:opacity-100 transition-opacity duration-200 inline-flex items-center gap-1 px-2 py-1 rounded-full text-green-700 text-xs font-medium bg-transparent hover:bg-green-50"><span class="fa fa-whatsapp" style="font-size:2em;"></span></a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Card 4 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 group" data-aos="fade-up" data-aos-delay="250">
+            <div class="h-48 relative overflow-hidden">
+              <img src="img/products/pickles.png" class="w-full h-full object-cover" alt="Kallumakkaya Achar">
+            </div>
+            <div class="p-2">
+              <div class="flex items-center justify-between mb-1">
+                <div>
+
+                <h3 class="text-base font-bold font-heading">Kallumakkaya Achar</h3>
+              <p class="text-gray-600 text-xs mb-2">Traditional Kerala style pickle</p>
+                </div>
+                <a href="https://wa.me/919048838276?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20Kallumakkaya%20Achar" target="_blank" class="md:opacity-0 group-hover:opacity-100 transition-opacity duration-200 inline-flex items-center gap-1  px-2 py-1 rounded-full text-green-700 text-xs font-medium bg-transparent hover:bg-green-50"><span class="fa fa-whatsapp" style="font-size:2em;"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="relative py-24 bg-gradient-to-b from-gray-50 to-white font-body overflow-hidden">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="mb-16" data-aos="fade-up">
+          <div class="text-center">
+            <span class="text-orange-400 font-medium mb-2 inline-block">What People Say</span>
+            <h2 class="text-3xl md:text-4xl font-bold font-heading">Testimonials</h2>
+          </div>
+        </div>
+        
+        <!-- Redesigned Swiper -->
+        <div class="relative">
+          <div class="swiper testimonial-swiper overflow-visible pb-16">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide p-4">
+                <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md relative">
+                  <div class="absolute -top-3 left-8 text-5xl text-orange-300 opacity-30 font-serif">"</div>
+                  <p class="text-gray-700 mb-8 relative z-10 leading-relaxed text-sm">I recently tried the Kallumakkaya Achar from Sea Bites and it was love at first bite! The flavors are so well balanced and the quality of the mussels is top-notch. I highly recommend it to anyone looking for an authentic kallummakkayi pickle experience.</p>
+                  <div class="flex items-center gap-4">
+                    <img src="img/testimonial/testimonial-1.jpeg" alt="" class="w-14 h-14 rounded-full object-cover ring-2 ring-orange-100">
+                    <div>
+                      <h4 class="font-bold font-heading text-gray-900">Keerthana P</h4>
+                      <p class="text-gray-500 text-sm">Food Critic, Calicut</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="swiper-slide p-4">
+                <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md relative">
+                  <div class="absolute -top-3 left-8 text-5xl text-orange-300 opacity-30 font-serif">"</div>
+                  <p class="text-gray-700 mb-8 relative z-10 leading-relaxed text-sm ">Sea Bites has truly raised the bar for kallummakkayi in Calicut! The Kallumakkaya Nirachath was absolutely delicious—perfectly spiced and so fresh. I appreciate the attention to detail in the dish. Highly recommended for anyone who loves kallummakkayi.</p>
+                  <div class="flex items-center gap-4">
+                    <img src="img/testimonial/testimonial-2.jpg" alt="" class="w-14 h-14 rounded-full object-cover ring-2 ring-orange-100">
+                    <div>
+                      <h4 class="font-bold font-heading text-gray-900">Akshay SN</h4>
+                      <p class="text-gray-500 text-sm">Food lover, Calicut</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="swiper-slide p-4">
+                <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md relative">
+                  <div class="absolute -top-3 left-8 text-5xl text-orange-300 opacity-30 font-serif">"</div>
+                  <p class="text-gray-700 mb-8 relative z-10 leading-relaxed text-sm">Ordering from Sea Bites is a treat! The Kallumakkaya Erachi is my favorite—tender mussel meat cooked just right with bold spices. The friendly service and cozy atmosphere make it my go-to spot for seafood cravings.<br> Sea bites 🌟</p>
+                  <div class="flex items-center gap-4">
+                    <img src="img/testimonial/testimonial-3.jpg" alt="" class="w-14 h-14 rounded-full object-cover ring-2 ring-orange-100">
+                    <div>
+                      <h4 class="font-bold font-heading text-gray-900">Sreya Mohan</h4>
+                      <p class="text-gray-500 text-sm">Foodie, Kannur</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Modern pagination -->
+            <div class="swiper-pagination mt-8"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Decorative elements -->
+      <div class="absolute -bottom-16 -right-16 w-64 h-64 bg-orange-50 rounded-full opacity-50 blur-3xl"></div>
+      <div class="absolute -top-16 -left-16 w-64 h-64 bg-orange-50 rounded-full opacity-50 blur-3xl"></div>
+    </section>
+
+    <!-- Updated Swiper JS Init -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        new Swiper('.testimonial-swiper', {
+          loop: true,
+          spaceBetween: 20,
+          slidesPerView: 1,
+          centeredSlides: true,
+          effect: 'slide',
+          speed: 600,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: '.testimonial-swiper .swiper-pagination',
+            clickable: true,
+          },
+          breakpoints: {
+            640: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+              centeredSlides: false,
+            },
+            1024: {
+              slidesPerView: 3,
+              centeredSlides: false,
+            },
+          }
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 50) {
+            navbar.classList.add('bg-white/40', 'backdrop-blur-lg', 'navbar-fade-mask');
+            navbar.classList.remove('bg-transparent', 'border-b', 'border-white/30', 'shadow-navbar-glass', 'navbar-gradient-blend');
+          } else {
+            navbar.classList.remove('bg-white/40', 'backdrop-blur-lg', 'navbar-fade-mask');
+            navbar.classList.add('bg-transparent');
+          }
+        });
+      });
+    </script>
+
+    <!-- Gallery Section -->
+    <section class="bg-white pt-24  font-body relative overflow-hidden" id="gallery">
+      <!-- Decorative elements -->
+      <div class="absolute top-0 left-0 w-64 h-64 bg-orange-50 rounded-full -translate-x-1/2 -translate-y-1/2 opacity-50"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-50 rounded-full translate-x-1/3 translate-y-1/3 opacity-40"></div>
+      
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="mb-12" data-aos="fade">
+          <div class="text-center">
+            <span class="text-orange-400 font-medium mb-2 inline-block">Our Creations</span>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 font-heading">Gallery</h2>
+            <p class="text-gray-600 max-w-sm mx-auto">Explore our delicious seafood creations through our visual journey</p>
+          </div>
+        </div>
+        
+        <!-- Masonry Gallery using CSS columns -->
+        <div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4" data-aos="fade-up">
+<div class="break-inside-avoid mb-4 group">
+            <div class="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+              <img class="w-full h-auto" src="img/products/nirachath-2.jpeg" alt="Seafood dish" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-4 text-white">
+                  
+                  <h3 class="font-medium">Coastal Delight </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="break-inside-avoid mb-4 group">
+            <div class="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+              <img class="w-full h-auto" src="img/dish2.jpg" alt="Seafood dish" />
+              
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-4 text-white">
+                  <h3 class="font-medium">Coastal Delight</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="break-inside-avoid mb-4 group">
+            <div class="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+              <img class="w-full h-auto" src="img/products/erachi.jpg" alt="Seafood dish" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-4 text-white">
+                  <h3 class="font-medium">Coastal Delight</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="break-inside-avoid mb-4 group">
+            <div class="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+              <img class="w-full h-auto" src="img/products/best-1.png" alt="Seafood dish" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-4 text-white">
+                  <h3 class="font-medium">Coastal Delight</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Image 6 -->
+          <div class="break-inside-avoid mb-4 group">
+            <div class="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+              <img class="w-full h-auto" src="img/products/pickles.png" alt="Seafood dish" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-4 text-white">
+                  <h3 class="font-medium">Coastal Delight</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Image 7 -->
+          <div class="break-inside-avoid mb-4 group">
+            <div class="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+              <img class="w-full h-auto" src="img/dish2.jpg" alt="Seafood dish" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-4 text-white">
+                  <h3 class="font-medium">Ocean's Bounty</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Image 8 -->
+          <div class="break-inside-avoid mb-4 group">
+            <div class="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+              <img class="w-full h-auto" src="img/dish3.jpg" alt="Restaurant ambiance" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-4 text-white">
+                  <h3 class="font-medium">Culinary Art</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Image 9 -->
+          <div class="break-inside-avoid mb-4 group">
+            <div class="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+              <img class="w-full h-auto" src="img/dish4.jpg" alt="Restaurant ambiance" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-4 text-white">
+                  <h3 class="font-medium">Seafood Symphony</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WhatsApp FAB -->
+    <a href="https://wa.me/919048838276" id="whatsapp-fab" target="_blank" aria-label="Chat on WhatsApp"
+      class="fixed bottom-6 right-6 z-50 bg-green-500 text-white rounded-full shadow-lg p-4 flex items-center justify-center transition-all duration-300 opacity-0 scale-75 pointer-events-none hover:scale-110 hover:shadow-xl"
+      style="box-shadow: 0 8px 32px 0 rgba(39, 174, 96, 0.18);">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+      </svg>
+      
+    </a>
+    <script>
+      // WhatsApp FAB show after 3 seconds
+      document.addEventListener('DOMContentLoaded', function() {
+        const fab = document.getElementById('whatsapp-fab');
+        if (fab) {
+          setTimeout(function() {
+            fab.classList.remove('opacity-0', 'scale-75', 'pointer-events-none');
+            fab.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
+          }, 3000);
+        }
+      });
+    </script>
+
+
+    <footer id="footer" class="bg-gray-50 text-gray-400 py-12 mt-32 font-body">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row md:justify-between gap-12 mb-10">
+          <!-- Logo and About -->
+          <div class="md:w-1/3 flex flex-col items-start">
+            <div class="mb-4">
+              <h3 class="text-xl font-heading">Sea Bites</h3>
+            </div>
+            <p class="mb-6 text-gray-500 leading-relaxed text-sm">Calicut's premier mussels , blending kozhikoden mussels with Kerala's coastal flavors. Quality, authenticity, and a love for seafood.</p>
+            <div class="">
+              <a href="https://www.instagram.com/seabites9?igsh=MTY3eTZoMTl0Mjk3cQ==" target="_blank" class="hover:text-orange-400 text-2xl transition flex gap-x-2 mt-2 items-center">
+<span class="fa fa-instagram"></span>
+              <p class="text-sm">Follow us on instagram</p>
+              </a>
+            </div>
+          </div>
+          <!-- Links and Info -->
+          <div class="md:w-1/3 flex flex-col gap-8">
+            <div>
+              <h3 class="text-lg font-bold mb-2 font-heading text-orange-400">Opening Hours</h3>
+              <p class="text-sm"><span class="font-semibold text-gray-400 block">Friday</span> Closed</p>
+              <p class="text-sm"><span class="font-semibold text-gray-400 block">Other days</span> 6AM - 9PM</p>
             </div>
             <div>
-              <h3>Contact Info</h3>
-              <ul class="list-unstyled footer-link">
-                <li class="d-block">
-                  <span class="d-block text-black">Address:</span>
-                  <span>Calicut, Kerala, India</span></li>
-                <li class="d-block"><span class="d-block text-black">Phone:</span><span>00919048838276</span></li>
-                <li class="d-block"><span class="d-block text-black">Email:</span><span>info@yourdomain.com</span></li>
+              <h3 class="text-lg font-bold mb-2 font-heading text-orange-400">Contact Info</h3>
+              <ul class="space-y-2 text-sm">
+                <li><span class="font-semibold text-gray-400">Address:</span> Edavannappara - malappuram 
+                  <p>673645, kerala/india</p></li>
+                <li><span class="font-semibold text-gray-400">Phone:</span> 9048838276</li>
+                <li><span class="font-semibold text-gray-400">Email:</span> marjis89@gmail.com</li>
               </ul>
             </div>
           </div>
-          <div class="col-md-3">
-          
+          <!-- Quick Links -->
+          <div class="md:w-1/4 flex flex-col gap-4">
+            <h3 class="text-lg font-bold mb-2 font-heading text-orange-400">Quick Links</h3>
+            <ul class="space-y-2 text-sm">
+
+              <li><a href="#home" class="hover:text-orange-400 transition">Home</a></li>
+              <li><a href="#menu" class="hover:text-orange-400 transition">Menu</a></li>
+              <li><a href="#gallery" class="hover:text-orange-400 transition">Gallery</a></li>
+            </ul>
           </div>
         </div>
-        <div class="row">
-          <div class="col-12 text-md-center text-left">
-            <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-
-            </p>
-          </div>
+        <div class="border-t border-gray-200 pt-6 text-center text-gray-500 text-xs">
+          <p>
+            &copy;<script>document.write(new Date().getFullYear());</script> Sea Bites. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
-    <!-- END footer -->
 
     <!-- loader -->
-    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16"/></svg></div>
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -301,6 +766,21 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     
 
     <script src="js/main.js"></script>
+<script>
+  // Smooth scroll for menu button (and all anchor links with hashes)
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').slice(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  });
+</script>
     
   </body>
 </html>
